@@ -525,6 +525,7 @@ class JavaMembers
 
         // Create bean properties from corresponding get/set methods first for
         // static members and then for instance members
+/*
         for (int tableCursor = 0; tableCursor != 2; ++tableCursor) {
             boolean isStatic = (tableCursor == 0);
             Map<String,Object> ht = isStatic ? staticMembers : members;
@@ -623,6 +624,7 @@ class JavaMembers
                 ht.put(key, value);
             }
         }
+*/
 
         // Reflect constructors
         Constructor<?>[] constructors = getAccessibleConstructors(includePrivate);
