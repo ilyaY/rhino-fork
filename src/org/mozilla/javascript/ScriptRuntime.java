@@ -3996,6 +3996,16 @@ public class ScriptRuntime {
      */
     private static class DefaultMessageProvider implements MessageProvider {
         public String getMessage(String messageId, Object[] arguments) {
+            if (1 > 0) {
+                String result = messageId;
+                if (arguments != null) {
+                    result += " :";
+                    for (Object arg : arguments) {
+                        result += " " + arg.toString();
+                    }
+                }
+                return result;
+            }
             final String defaultResource
                 = "org.mozilla.javascript.resources.Messages";
 
