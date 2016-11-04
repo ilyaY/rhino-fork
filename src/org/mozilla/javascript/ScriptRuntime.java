@@ -3996,16 +3996,15 @@ public class ScriptRuntime {
      */
     private static class DefaultMessageProvider implements MessageProvider {
         public String getMessage(String messageId, Object[] arguments) {
-            if (1 > 0) {
-                String result = messageId;
-                if (arguments != null) {
-                    result += " :";
-                    for (Object arg : arguments) {
-                        result += " " + arg.toString();
-                    }
+            String result = messageId;
+            if (arguments != null) {
+                result += " :";
+                for (Object arg : arguments) {
+                    result += " " + arg.toString();
                 }
-                return result;
             }
+            return result;
+            /*
             final String defaultResource
                 = "org.mozilla.javascript.resources.Messages";
 
@@ -4022,14 +4021,17 @@ public class ScriptRuntime {
                 throw new RuntimeException
                     ("no message resource found for message property "+ messageId);
             }
+            8?
 
             /*
              * It's OK to format the string, even if 'arguments' is null;
              * we need to format it anyway, to make double ''s collapse to
              * single 's.
              */
+            /*
             MessageFormat formatter = new MessageFormat(formatString);
             return formatter.format(arguments);
+            */
         }
     }
 
